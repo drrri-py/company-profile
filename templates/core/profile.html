@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Profil Perusahaan - Company Profile{% endblock %}
+
+{% block content %}
+<div class="bg-gray-100 py-10">
+    <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-10">Profil Perusahaan</h1>
+        
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold text-blue-600 border-b pb-2 mb-4">Sejarah</h2>
+            <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">{% if profile.history %}{{ profile.history }}{% else %}Belum ada data.{% endif %}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-blue-600 border-b pb-2 mb-4">Visi</h2>
+                <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">{% if profile.vision %}{{ profile.vision }}{% else %}Belum ada data.{% endif %}</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-blue-600 border-b pb-2 mb-4">Misi</h2>
+                <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">{% if profile.mission %}{{ profile.mission }}{% else %}Belum ada data.{% endif %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
